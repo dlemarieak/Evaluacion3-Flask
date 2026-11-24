@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="formulario">
+    <h2>Formulario de Nombres</h2>
+
+    <form method="POST">
+        <label>Nombre 1:</label>
+        <input type="text" name="nombre1" required>
+
+        <label>Nombre 2:</label>
+        <input type="text" name="nombre2" required>
+
+        <label>Nombre 3:</label>
+        <input type="text" name="nombre3" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if nombre %}
+        <p>El nombre con mayor cantidad de caracteres es: {{ nombre }}</p>
+        <p>El nombre tiene: {{ cantidad }} caracteres.</p>
+    {% endif %}
+
+    <a href="/">Volver al menú</a>
+</div>
+
+{% endblock %}

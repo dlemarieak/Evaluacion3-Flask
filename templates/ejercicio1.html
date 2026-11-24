@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="formulario">
+    <h2>Formulario de Notas</h2>
+
+    <form method="POST">
+        <label>Nota 1:</label>
+        <input type="number" name="nota1" min="10" max="70" required>
+
+        <label>Nota 2:</label>
+        <input type="number" name="nota2" min="10" max="70" required>
+
+        <label>Nota 3:</label>
+        <input type="number" name="nota3" min="10" max="70" required>
+
+        <label>Asistencia (%):</label>
+        <input type="number" name="asistencia" min="0" max="100" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if promedio is not none %}
+        <p>Promedio: {{ promedio }}</p>
+        <p>{{ estado }}</p>
+    {% endif %}
+
+    <a href="/">Volver al menú</a>
+</div>
+
+{% endblock %}
